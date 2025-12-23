@@ -1,16 +1,267 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>ME MAY BEO</title>
-  <style>
-    body { text-align: center; background: #ffdefa; font-family: sans-serif; }
-    h1 { font-size: 50px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Christmas 🎄</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffd4e5 0%, #ffe8f0 50%, #fff0f5 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Intro Screen */
+        .intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff69b4, #ffb6c1, #ffc0cb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: introFadeOut 1s ease-out 3.5s forwards;
+        }
+
+        @keyframes introFadeOut {
+            to {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+
+        .intro-content {
+            text-align: center;
+            color: white;
+        }
+
+        .intro h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: introTextAppear 1s ease-out, introTextFloat 2s ease-in-out 1s infinite;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes introTextAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes introTextFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .intro-stars {
+            font-size: 3em;
+            animation: introStarsRotate 2s linear infinite;
+        }
+
+        @keyframes introStarsRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .intro-message {
+            font-size: 1.5em;
+            margin-top: 20px;
+            animation: introMessageFade 1s ease-out 0.5s both;
+        }
+
+        @keyframes introMessageFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Snowflakes */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: #ffb3d9;
+            font-size: 1.5em;
+            pointer-events: none;
+            animation: fall linear infinite;
+            opacity: 0.8;
+            text-shadow: 0 0 5px rgba(255, 179, 217, 0.5);
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 30px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: contentAppear 1s ease-out 3.5s forwards;
+        }
+
+        @keyframes contentAppear {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(255, 182, 193, 0.3);
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 3px solid #ffb6c1;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff69b4;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.2);
+            animation: titleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .message {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #d15a8c;
+            margin: 30px 0;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .message p {
+            margin-bottom: 20px;
+        }
+
+        .tree {
+            font-size: 4em;
+            margin: 20px 0;
+            animation: treeShake 2s ease-in-out infinite;
+        }
+
+        @keyframes treeShake {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+
+        .gift {
+            font-size: 3em;
+            display: inline-block;
+            animation: giftBounce 1s ease-in-out infinite;
+            margin: 20px 0;
+        }
+
+        @keyframes giftBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .closing {
+            margin-top: 30px;
+            font-size: 1.4em;
+            color: #ff1493;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .sparkles {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-  <h1>🎉 YOU ARE GAY 🎉</h1>
-  <p> bam vao day de giai loi nguyen gay </p>
-  <button onclick="alert(' I KNOW YOU WATCH FEMBOYS')">Click me</button>
+    <!-- Intro Screen -->
+    <div class="intro">
+        <div class="intro-content">
+            <div class="intro-stars">✨</div>
+            <h1>🎄 Merry Christmas! 🎁</h1>
+            <div class="intro-message">A special message for you...</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="card">
+            <div class="tree">🎄</div>
+            <h1>🎅 Happy Christmas! 🎁</h1>
+            
+            <div class="message">
+                <p>Another year has passed with you in my life, and I'm really grateful that we got to know each other. Thank you for spending your time and letting me be part of your life!!!</p>
+                
+                <p>I truly cherish the memories we share. Knowing that you have an important exam coming up, I hope you'll give it your best and get through it in the best way possible. You've got this! 💪</p>
+            </div>
+
+            <div class="gift">🎁</div>
+            
+            <div class="closing">
+                <p>Wishing you a magical Christmas</p>
+                <p>and success in everything ahead!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tạo bông tuyết
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 5 + 's';
+            snowflake.style.fontSize = Math.random() * 1 + 1 + 'em';
+            snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+            
+            document.body.appendChild(snowflake);
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 8000);
+        }
+
+        // Bắt đầu tạo bông tuyết sau khi intro kết thúc
+        setTimeout(() => {
+            setInterval(createSnowflake, 200);
+            // Tạo bông tuyết ban đầu
+            for (let i = 0; i < 20; i++) {
+                setTimeout(createSnowflake, i * 100);
+            }
+        }, 3500);
+    </script>
 </body>
 </html>
